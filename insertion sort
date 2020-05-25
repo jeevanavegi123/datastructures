@@ -1,0 +1,43 @@
+
+#include <stdio.h>
+
+int main()
+
+{
+    int n,a[20],i,j,temp;
+    
+    */size of the array
+  printf("Enter the size of array");
+  scanf("%d",&n);
+  
+  */reading elements into an array
+  printf("\nEnter the array of elements");
+  for(int i=0;i<n;i++)
+  scanf("%d",&a[i]);
+  
+  */Printing elements before sorting
+  printf("Before sorting");
+  for(i=0;i<n;i++)
+  printf("%d",a[i]);
+  
+  */Insertion sortlogic
+  for(i=1;i<n;i++)        #we start from 1st index as there need to be atleat one element for comparison
+  {
+     temp=a[i];
+  for(j=i;j>0 && temp<a[j-1];j--)   #if previous element is greater than temp if yes enter the loop and copy the a[j]
+  {
+      a[j]=a[j-1];
+  }
+  a[j]=temp;  #replacing when desired position is found
+  }
+  
+  */Printing after sorting
+  printf("After Sorting\n");
+  for(i=0;i<n;i++)
+  printf("%d\t",a[i]);
+ 
+  
+  
+
+    return 0;
+}
